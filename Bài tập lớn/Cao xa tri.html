@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="vi-VN">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Thiên Dược LC</title>
+    <style>
+        :root{
+            --maincolor:#e5ac18;
+        }
+        *{/*reset css*/
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        html{
+            font-family: sans-serif;
+            font-size: 10px;
+            background: #E2E2E2;
+        }
+        body{
+            background:white;
+            width:1182px;
+            /* margin-left:auto;
+            margin-right:auto; */
+            margin:0 auto;
+        }
+        .nav_bar{
+        background: #e5ac18;
+        height: 40px;
+        }
+        .nav_bar .navmenu{
+            
+            height:100%;
+            margin-top:10px;
+            margin-left:50px;
+            float:left;
+        }
+        .nav_bar .navmenu1{
+            height:100%;
+            margin-top:10px;
+            margin-left:50px;
+            float:left;
+        }
+        .nav_bar .navmenu2{
+            height:100%;
+            margin-top:10px;
+            margin-left:50px;
+            float:left;
+        }
+        .nav_bar .search{
+            float:left;
+            width:190px;
+            height:25px;
+            margin-top:6px;
+            background:#ffffff;
+            border-radius: 12.5px;
+            margin-left:150px;
+        }
+
+        .nav_bar .search input{
+            background:none;
+            margin-left:8px;
+            margin-top:5px;
+            color:black;
+            font-weight: bold;
+            border:none;
+            width: 79%;
+            /* height:100%; */
+        }
+        .nav_bar .search input:focus{
+            outline:none;
+        }
+        .nav_bar .search span{
+            color:black;
+            font-size:1.1rem;
+        }
+        .nav_bar .lang{
+            float:left;
+            margin-left:50px;
+            margin-top:3px;
+        }
+        p{
+            color:#ffffff;
+            font-size: 13px;
+
+        }
+        /*nav_bar1*/
+        .nav_bar1{
+        background: #ffffff;
+        height: 120px;
+        
+        }
+        .nav_bar1 .navmenu0{
+            height:100%;
+            margin-left:10px;
+            float:left;
+        }
+        .nav_bar1 .navmenu1{
+            height:100%;
+            margin-left:10px;
+            float:left;
+        }
+        img{
+            margin-left: 10px;
+            height: 90%;
+            width: 95%;
+            float: left;
+        }
+        /*nav_bar2*/
+        #main-menu{
+            height: 52px;
+            background:var(--maincolor);
+        }
+        #main-menu>ul{
+            list-style-type: none;
+            height: 100%;
+        }
+        #main-menu>ul>li{
+            /* background:red; */
+            /* border:1px solid yellow; */
+            float:left;
+            height: 100%;
+            line-height: 52px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color:white;
+            padding: 0 13px;
+            font-size:1,5rem;
+            position: relative;
+        }
+        #main-menu>ul>li:hover{
+            color:yellow;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        #main-menu>ul>li:hover>a{
+            color:yellow;
+        }
+        #main-menu>ul>li>a{
+            color:white;
+            text-decoration: none;
+        }
+        #main-menu>ul>li>ul{
+            list-style-type: none;
+            /* border:1px solid red; */
+            width:270px;
+            background:var(--maincolor);
+            position: absolute;
+            left:0;
+            padding:8px 0;
+            display:none;
+            z-index: 1;
+            /* top:0; */
+        }
+        #main-menu>ul>li:hover>ul{
+            display:block;
+        }
+        #main-menu>ul>li>ul>li{
+            text-transform: none;
+            font-weight: normal;
+            height: 32px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 32px;
+             /* border:1px solid yellow; */
+             padding:0 10px;
+             color:white;
+             position: relative;
+        }
+        #main-menu>ul>li>ul>li::before{
+            content:">> ";
+        }
+        #main-menu>ul>li>ul>li:hover{
+            color:yellow;
+            background:#04519f;
+            animation: slide 1s;
+        }
+        #main-menu>ul>li>ul>li:hover>a{
+            color:yellow;
+        }
+        #main-menu>ul>li>ul>li>a{
+            color:white;
+            text-decoration: none;
+        }
+        
+        /*body*/
+        h2{
+          color: #e5ac18;
+          font-weight: bold;
+          margin-left:20px;
+          margin-top:30px;
+        }
+        .border-border-danger{
+        margin-left: 50px;
+        margin-right: 50px;
+        }
+        .border-border-danger p{
+        color:black;
+        line-height: 32px;
+        text-align:justify;
+        font-size:20px;
+        font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        .border-border-danger img{
+        width:250px;
+        margin-left:30px;
+        margin-right:70px;
+        }
+        h3{
+        font-size: 30px;
+        font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        /*footer*/
+
+        * {
+  font-family: Open Sans;
+}
+
+section {
+  width: 100%;
+  display: inline-block;
+  background:#e5ac18;
+  height: 50vh;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.footer-distributed{
+  background:#e5ac18;
+  box-shadow: 0 1px 1px 0 rgba(255, 4, 4, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 55px 50px;
+  margin-top:100px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+  width: 15%;
+}
+
+.footer-distributed .footer-left p{
+  text-align: center;
+}
+/* The company logo */
+
+.footer-distributed h3{
+  color:  #ffffff;
+  font: normal 36px 'Open Sans', cursive;
+  margin: 0;
+}
+
+.footer-distributed h3 span{
+  color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+  color:  #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer-distributed .footer-links a{
+  display:inline-block;
+  line-height: 1.8;
+  font-weight:400;
+  text-decoration: none;
+  color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+  color:  #222;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+  width: 35%;
+  margin-left:20px;
+  margin-top:17px;
+}
+
+.footer-distributed .footer-center i{
+  background-color:  #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+  display: inline-block;
+  color: #ffffff;
+  font-weight:400;
+  vertical-align: middle;
+  margin:0;
+  font-size:18px;
+  font-family:"lucida grande", tahoma, verdana, arial, sans-serif;
+}
+
+.footer-distributed .footer-center p span{
+  display:block;
+  font-weight: normal;
+  font-size:14px;
+  line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+  color:  lightseagreen;
+  text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+  width: 45%;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.footer-distributed .footer-company-about{
+  line-height: 20px;
+  color:  #ffffff;
+  font-size: 15px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+  display: block;
+  color:  #ffffff;
+  font-size: 27px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family:"lucida grande", tahoma, verdana, arial, sans-serif;
+}
+
+.footer-distributed .footer-icons{
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color:  #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+  .footer-distributed{
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i{
+    margin-left: 0;
+  }
+
+}
+
+        
+    </style>
+</head>
+<body>
+  <div class="nav_bar">
+    <div class="navmenu">        
+      <p><span class="glyphicon glyphicon-zoom-in"></span> https://www.facebook.com/thienduoclc.vn</p>
+    </div>
+    <div class="navmenu1">
+        <p><span class="glyphicon glyphicon-earphone"></span> 0878 236 570 / 0944 698 176</p>
+    </div>
+    <div class="navmenu2">
+        <p><span class="glyphicon glyphicon-envelope"></span> info.lcthienphuc@gmail.com</p>
+    </div>
+    <div class="search">
+        <input type="text" placeholder="Tìm kiếm ...">
+        <a href=""><span class="glyphicon glyphicon-search"></span></a>
+    </div>
+</div>
+    <div class="nav_bar1">
+        <div class="navmenu0">
+        <a href="">
+            <img src="Untitled.png" alt="">
+        </a>
+        </div>
+        <div class="navmenu1"></div>
+    </div>
+    <div id="main-menu">
+      <ul>
+        <li><a href="file:///C:/Users/use/Desktop/B%C3%A0i%20t%E1%BA%ADp%20l%E1%BB%9Bn/Trial.html">Trang chủ</a>
+        </li>
+        <li><a href="file:///C:/Users/use/Desktop/B%C3%A0i%20t%E1%BA%ADp%20l%E1%BB%9Bn/Gi%E1%BB%9Bi%20thi%E1%BB%87u.html">Giới thiệu</a>
+        </li>
+        <li>Sản phẩm
+            <ul>
+                <li><a href="file:///C:/Users/use/Desktop/B%C3%A0i%20t%E1%BA%ADp%20l%E1%BB%9Bn/Cao%20xa%20tri.html">Cao xa tri</a></li>
+                <li><a href="file:///C:/Users/use/Desktop/B%C3%A0i%20t%E1%BA%ADp%20l%E1%BB%9Bn/tr%C3%A0%20linh%20chi%20x%E1%BA%A1%20%C4%91en.html">Trà linh chi xạ đen</a></li>
+                <li><a href="file:///C:/Users/use/Desktop/B%C3%A0i%20t%E1%BA%ADp%20l%E1%BB%9Bn/lINH%20CHI%20%C4%90%C3%94NG%20TR%C3%99NG%20H%E1%BA%A0%20TH%E1%BA%A2O.html">Linh chi đông trùng hạ thảo</a></li>
+            </ul>
+        </li>
+        <li>Tư vấn</li>
+    </ul>
+    </div>
+    </div>  
+    <h2><span> &raquo; SẢN PHẨM </span></h2>
+  <div class="border-border-danger">  
+  <p>&nbsp;</p>
+  <a href="">
+    <img src="http://thienduoclc.com.vn/wp-content/uploads/2021/09/LCThienPhuc.2021.9.01_15h35.jpg" alt="">
+  </a>
+  <h3>CAO XA TRI - GIẢI ĐỘC, MÁT GAN</h3>
+  <p>
+    Sản phẩm dành cho ĐỐI TƯỢNG: Người lớn trong các trường hợp gan nhiễm mỡ, men gan tăng cao, xơ gan, dị ứng, mẩn ngứa, mụn nhọt, vàng da, mày đay, sạm da do chức năng gan suy giảm. Người uống nhiều bia rượu, sử dụng thuốc kháng sinh gây hại cho gan.
+  </p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+             
+</div>
+<footer class="footer-distributed">
+
+      <div class="footer-left">
+
+        <a href="http://thienduoclc.com.vn/gioi-thieu" class="img_about_home"><img src="http://thienduoclc.com.vn/wp-content/uploads/2021/08/logoLC_3.png" alt=""/></a>
+
+        <p class="footer-company-name">QuangHung © 2015</p>
+      </div>
+
+      <div class="footer-center">
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p><span class="glyphicon glyphicon-earphone"></span> 0878 236 570 / 0944 698 176</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><span class="glyphicon glyphicon-envelope"></span>info.lcthienphuc@gmail.com</p>
+        </div>
+
+        <div>
+          <i class="fb"></i>
+          <p><span class="glyphicon glyphicon-zoom-in"></span>https://www.facebook.com/thienduoclc.vn</p>
+        </div>
+
+      </div>
+
+      <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span>CÔNG TY CỔ PHẦN LC THIÊN PHÚC</span>
+          Bản quyền thuộc về quanghung_22. Design by QuangHung with love
+        </p>
+
+        
+      </div>
+
+    </footer>
+</body>
+</html>
+
